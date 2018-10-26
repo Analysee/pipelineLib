@@ -53,6 +53,12 @@ def call(body) {
 			task('fetch artifact from lindacaretest'){
 			fetchArtifact('lindacaretest',ARTIFACT_NAME,VERSION)
 			}
+			task('azure test deployment approval'){
+			approve('Deploy to azure test environment?')
+			}
+			task('azure test deployment'){
+			azureDeploy('lindacaretest',);
+			}
 			}
 			} catch (err) {
 				echo "BUILD FAILED"
