@@ -32,8 +32,8 @@ def call(body) {
 		// set the workspace manually because some paths can get to long
         ws("${workspace}") {
 		 	try{
-			stage("preparation"){
-				git 'https://github.com/Analysee/jenkins2.git' 
+			stage("checkout"){
+				checkout scm
 			}
 			stage("build"){
 				 withMaven(maven: 'maven'){
