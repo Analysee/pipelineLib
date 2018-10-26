@@ -13,3 +13,4 @@ def call(String artifactName,String version,String stagingRepository,String rele
         releaseUser: 'admin',
         releasePW: 'admin123'
     ) 
+}
