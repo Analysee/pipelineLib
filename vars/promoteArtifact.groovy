@@ -1,7 +1,7 @@
 def call(String artifactName,String version,String stagingRepository2,String releaseRepository2){
 	        artifactPromotion (
         promoterClass:'org.jenkinsci.plugins.artifactpromotion.NexusOSSPromotor',
-        groupId: 'com.rutvikpatel.springboot.helloworld',
+        groupId: artifactName,
         artifactId: artifactName,
         version:version,
         extension: 'war',
