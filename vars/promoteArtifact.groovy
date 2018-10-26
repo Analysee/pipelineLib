@@ -1,4 +1,4 @@
-def call(String artifactName,String version,String stagingRepository2,String releaseRepository2){
+def call(String artifactName,String version,String stagingRepository2,String releaseRepository2,String environment){
 	        artifactPromotion (
         promoterClass:'org.jenkinsci.plugins.artifactpromotion.NexusOSSPromotor',
         groupId: 'testEnvironment',

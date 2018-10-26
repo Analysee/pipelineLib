@@ -63,7 +63,19 @@ def call(body) {
 			approve('Promote artifact test to int?')
 			}
 			task('promote artifact test to int'){
-			promoteArtifact(ARTIFACT_NAME,VERSION,'lindacaretest','lindacareint')
+			promoteArtifact(ARTIFACT_NAME,VERSION,'lindacaretest','lindacareint','testEnvironment')
+			}
+			task('promote artifact int to uat approval'){
+			approve('Promote artifact int to uat?')
+			}
+			task('promote artifact int to uat'){
+			promoteArtifact(ARTIFACT_NAME,VERSION,'lindacareint','lindacareuat','testEnvironment')
+			}
+			task('promote artifact uat to prod approval'){
+			approve('Promote artifact uat to prod?')
+			}
+			task('promote artifact int to uat'){
+			promoteArtifact(ARTIFACT_NAME,VERSION,'lindacareuat','lindacareprod','testEnvironment')
 			}
 			}
 			} catch (err) {
