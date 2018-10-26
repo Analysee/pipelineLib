@@ -65,11 +65,29 @@ def call(body) {
 			task('promote artifact test to int'){
 			promoteArtifact(ARTIFACT_NAME,VERSION,'lindacaretest','lindacareint','testEnvironment')
 			}
+			task('fetch artifact from lindacareint'){
+			fetchArtifact('lindacareint',ARTIFACT_NAME,VERSION)
+			}
+			task('azure int deployment approval'){
+			approve('Deploy to azure int environment?')
+			}
+			task('azure int deployment'){
+			azureDeploy('lindacare-int',);
+			}
 			task('promote artifact int to uat approval'){
 			approve('Promote artifact int to uat?')
 			}
 			task('promote artifact int to uat'){
 			promoteArtifact(ARTIFACT_NAME,VERSION,'lindacareint','lindacareuat','testEnvironment')
+			}
+			task('fetch artifact from lindacareuat'){
+			fetchArtifact('lindacareint',ARTIFACT_NAME,VERSION)
+			}
+			task('azure int deployment approval'){
+			approve('Deploy to azure int environment?')
+			}
+			task('azure int deployment'){
+			azureDeploy('lindacare-uat',);
 			}
 			task('promote artifact uat to prod approval'){
 			approve('Promote artifact uat to prod?')
