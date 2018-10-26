@@ -42,9 +42,9 @@ def call(body) {
 			sh 'mv target/*.war target/ROOT.war'
 			}
 			}
-			task('sonarqube analysis'){
-			sonarQubeAnalysis()
-			}
+			//task('sonarqube analysis'){
+			//sonarQubeAnalysis()
+			//}
 			task('upload artifact'){
 			nexusArtifactUpload(VERSION,ARTIFACT_NAME)
 			}
