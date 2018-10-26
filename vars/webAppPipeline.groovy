@@ -24,9 +24,7 @@ def call(body) {
     properties([
     	disableConcurrentBuilds(),
     	pipelineTriggers([
-    		[
-    			$class: 'GitHubTrigger'
-    		],
+    		
     		pollSCM('H H * * *')
     	])
     ])   
