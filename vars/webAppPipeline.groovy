@@ -32,7 +32,7 @@ def call(body) {
 		// set the workspace manually because some paths can get to long
         ws("${workspace}") {
 		 	try{
-			stage("build"){
+			stage('build'){
 			task('checkout'){
 			checkout scm
 			}
@@ -43,11 +43,10 @@ def call(body) {
 			}
 			}
 			task('sonarqube analysis'){
-			sonarQubeAnalysis(){
+			sonarQubeAnalysis()
 			}
-			}
-			stage('Upload to nexus'){
-			nexusArtifactUpload(VERSION,ARTIFACT_NAME)
+			stage('dev'){
+			
 			}
 			}
 			} catch (err) {
