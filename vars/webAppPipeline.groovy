@@ -49,6 +49,7 @@ def call(body) {
 			stage('Upload to nexus'){
 			nexusArtifactUpload(VERSION,ARTIFACT_NAME)
 			}
+			}
 			} catch (err) {
 				echo "BUILD FAILED"
 		        echo "Caught: ${err}"
