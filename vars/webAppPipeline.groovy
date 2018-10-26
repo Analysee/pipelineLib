@@ -45,9 +45,11 @@ def call(body) {
 			task('sonarqube analysis'){
 			sonarQubeAnalysis()
 			}
-			stage('dev'){
-			
+			task('upload artifact'){
+			nexusArtifactUpload(VERSION,ARTIFACT_NAME)
 			}
+			}
+			stage('dev'){
 			}
 			} catch (err) {
 				echo "BUILD FAILED"
