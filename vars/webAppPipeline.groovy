@@ -42,7 +42,7 @@ def call(body) {
 			}
 			}
 			stage("sonarQubeAnalysis"){
-			SonarQubeAnalysis()
+			sonarQubeAnalysis()
 			}
 			stage('Upload to nexus'){
 			nexusArtifactUpload(VERSION,ARTIFACT_NAME)
@@ -53,7 +53,7 @@ def call(body) {
 		        currentBuild.result = 'FAILURE'
     		} finally {
     			echo "Cleaning up workspace"
-                deleteDir()
+               //deleteDir()
             }
         }
     }
