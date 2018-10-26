@@ -83,10 +83,10 @@ def call(body) {
 			task('fetch artifact from lindacareuat'){
 			fetchArtifact('lindacareuat',ARTIFACT_NAME,VERSION)
 			}
-			task('azure int deployment approval'){
-			approve('Deploy to azure int environment?')
+			task('azure uat deployment approval'){
+			approve('Deploy to azure uat environment?')
 			}
-			task('azure int deployment'){
+			task('azure uat deployment'){
 			azureDeploy('lindacare-uat');
 			}
 			task('promote artifact uat to prod approval'){
@@ -95,7 +95,7 @@ def call(body) {
 			task('upload artifact'){
 			nexusArtifactUpload(VERSION,ARTIFACT_NAME,'lindacareprod')
 			}
-			task('promote artifact int to uat'){
+			task('promote artifact uat to prod'){
 			promoteArtifact(ARTIFACT_NAME,VERSION,'lindacareuat','lindacareprod','testEnvironment')
 			}
 			}
