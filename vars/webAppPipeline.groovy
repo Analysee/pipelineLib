@@ -35,11 +35,15 @@ def call(body) {
 			stage("build"){
 			task('checkout'){
 			checkout scm
+			}
+			task('maven build'){
 			withMaven(maven: 'maven'){
 			sh 'mvn clean package'
 			sh 'mv target/*.war target/ROOT.war'
 			}
-			sonarQubeAnalysis()
+			}
+			task('sonarqube analysis'){
+			sonarQubeAnalysis(){
 			}
 			}
 			stage('Upload to nexus'){
