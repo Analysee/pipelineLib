@@ -46,7 +46,7 @@ def call(body) {
 			//sonarQubeAnalysis()
 			//}
 			task('upload artifact'){
-			nexusArtifactUpload(VERSION,ARTIFACT_NAME)
+			nexusArtifactUpload(VERSION,ARTIFACT_NAME,'lindacaretest')
 			}
 			}
 			stage('dev'){
@@ -91,6 +91,9 @@ def call(body) {
 			}
 			task('promote artifact uat to prod approval'){
 			approve('Promote artifact uat to prod?')
+			}
+			task('upload artifact'){
+			nexusArtifactUpload(VERSION,ARTIFACT_NAME,'lindacareprod')
 			}
 			task('promote artifact int to uat'){
 			promoteArtifact(ARTIFACT_NAME,VERSION,'lindacareuat','lindacareprod','testEnvironment')
