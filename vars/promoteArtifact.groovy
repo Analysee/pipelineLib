@@ -3,7 +3,7 @@ def call(String artifactName,String version,String stagingRepository,String rele
         promoterClass:'org.jenkinsci.plugins.artifactpromotion.NexusOSSPromotor',
         groupId: 'com.rutvikpatel.springboot.helloworld',
         artifactId: artifactName,
-        version:version
+        version:version,
         extension: 'war',
         stagingRepository: 'http://jenkins5lindacare.westeurope.cloudapp.azure.com:8081/repository/${stagingRepository}',
         stagingUser: 'admin',
