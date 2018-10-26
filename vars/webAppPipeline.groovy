@@ -57,7 +57,7 @@ def call(body) {
 			approve('Deploy to azure test environment?')
 			}
 			task('azure test deployment'){
-			azureDeploy('lindacaretest',);
+			azureDeploy('lindacare-test',);
 			}
 			}
 			} catch (err) {
