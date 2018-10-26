@@ -59,6 +59,12 @@ def call(body) {
 			task('azure test deployment'){
 			azureDeploy('lindacare-test',);
 			}
+			task('promote artifact test to int approval'){
+			approve('Promote artifact test to int?')
+			}
+			task('promote artifact'){
+			approve(ARTIFACT_NAME,VERSION)
+			}
 			}
 			} catch (err) {
 				echo "BUILD FAILED"
