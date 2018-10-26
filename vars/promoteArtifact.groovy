@@ -5,11 +5,11 @@ def call(String artifactName,String version,String stagingRepository2,String rel
         artifactId: artifactName,
         version:version,
         extension: 'war',
-        stagingRepository: 'http://jenkins5lindacare.westeurope.cloudapp.azure.com:8081/repository/lindacaretest',
+        stagingRepository: 'http://jenkins5lindacare.westeurope.cloudapp.azure.com:8081/repository/${stagingRepository2}',
         stagingUser: 'admin',
         stagingPW: 'admin123',
         skipDeletion: true,
-        releaseRepository: 'http://jenkins5lindacare.westeurope.cloudapp.azure.com:8081/repository/lindacareint',
+        releaseRepository: 'http://jenkins5lindacare.westeurope.cloudapp.azure.com:8081/repository/${releaseRepository2}',
         releaseUser: 'admin',
         releasePW: 'admin123'
     ) 
