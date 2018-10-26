@@ -50,6 +50,9 @@ def call(body) {
 			}
 			}
 			stage('dev'){
+			task('fetch artifact from lindacaretest'){
+			fetchArtifact('lindacaretest',ARTIFACT_NAME,VERSION)
+			}
 			}
 			} catch (err) {
 				echo "BUILD FAILED"
@@ -57,7 +60,7 @@ def call(body) {
 		        currentBuild.result = 'FAILURE'
     		} finally {
     			echo "Cleaning up workspace"
-               //deleteDir()
+                deleteDir()
             }
         }
     }
