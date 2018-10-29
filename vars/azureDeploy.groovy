@@ -4,7 +4,7 @@ def call(String appName){
         sh 'az account set -s $AZURE_SUBSCRIPTION_ID'
 		azureWebAppPublish azureCredentialsId: 'mySP2',
         resourceGroup: 'lindacare-jenkins-test', appName: appName,
-        filePath: 'ROOT.war', sourceDirectory: 'target', targetDirectory: 'webapps'
+        filePath: 'fetchedArtifact.war', sourceDirectory: 'target', targetDirectory: 'webapps'
 		sh 'az logout'
 	}
 }
