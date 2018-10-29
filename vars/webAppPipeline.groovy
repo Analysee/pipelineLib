@@ -50,7 +50,7 @@ def call(body) {
 			}
 			stage('dev'){
 			task('fetch artifact from lindacaretest'){
-			fetchArtifact('lindacaretest',ARTIFACT_NAME,VERSION)
+			fetchArtifact('lindacaretest',ARTIFACT_NAME,VERSION, 'testEnvironment')
 			}
 			task('azure test deployment approval'){
 			approve('Deploy to azure test environment?')
@@ -65,7 +65,7 @@ def call(body) {
 			promoteArtifact(ARTIFACT_NAME,VERSION,'lindacaretest','lindacareint','testEnvironment')
 			}
 			task('fetch artifact from lindacareint'){
-			fetchArtifact('lindacareint',ARTIFACT_NAME,VERSION)
+			fetchArtifact('lindacareint',ARTIFACT_NAME,VERSION, 'testEnvironment')
 			}
 			task('azure int deployment approval'){
 			approve('Deploy to azure int environment?')
@@ -80,7 +80,7 @@ def call(body) {
 			promoteArtifact(ARTIFACT_NAME,VERSION,'lindacareint','lindacareuat','testEnvironment')
 			}
 			task('fetch artifact from lindacareuat'){
-			fetchArtifact('lindacareuat',ARTIFACT_NAME,VERSION)
+			fetchArtifact('lindacareuat',ARTIFACT_NAME,VERSION, 'testEnvironment')
 			}
 			task('azure uat deployment approval'){
 			approve('Deploy to azure uat environment?')
@@ -95,7 +95,7 @@ def call(body) {
 			promoteArtifact(ARTIFACT_NAME,VERSION,'lindacareuat','lindacareprod2','testEnvironment')
 			}
 			task('fetch artifact from lindacareprod'){
-			fetchArtifact('lindacareprod', ARTIFACT_NAME, VERSION)
+			fetchArtifact('lindacareprod', ARTIFACT_NAME, VERSION, 'testEnvironment')
 			}
 			task('azure prod deployment approval'){
 			approve('Deploy to azure prod environment?')
