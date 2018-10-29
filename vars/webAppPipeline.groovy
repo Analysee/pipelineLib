@@ -94,6 +94,18 @@ def call(body) {
 			task('promote artifact uat to prod'){
 			promoteArtifact(ARTIFACT_NAME,VERSION,'lindacareuat','lindacareprod2','testEnvironment')
 			}
+			task('fetch artifact from lindacareprod'){
+			fetchArtifact('lindacareprod', ARTIFACT_NAME, VERSION')
+			}
+			task('azure prod deployment approval'){
+			approve('Deploy to azure prod environment?')
+			}
+			task('azure prod deployment'){
+			azureDeploy('lindacare-prod');
+			}
+			task('end of pipeline'){
+			echo "pipeline success, swap slots in azure production environment manually"
+			}
 			}
 			} catch (err) {
 				echo "BUILD FAILED"
