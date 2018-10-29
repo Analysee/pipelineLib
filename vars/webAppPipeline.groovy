@@ -95,7 +95,7 @@ def call(body) {
 			promoteArtifact(ARTIFACT_NAME,VERSION,'lindacareuat','lindacareprod2','testEnvironment')
 			}
 			task('fetch artifact from lindacareprod'){
-			fetchArtifact('lindacareprod', ARTIFACT_NAME, VERSION')
+			fetchArtifact('lindacareprod', ARTIFACT_NAME, VERSION)
 			}
 			task('azure prod deployment approval'){
 			approve('Deploy to azure prod environment?')
