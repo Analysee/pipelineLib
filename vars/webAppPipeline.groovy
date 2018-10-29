@@ -24,7 +24,6 @@ def call(body) {
     properties([
     	disableConcurrentBuilds(),
     	pipelineTriggers([
-    		
     		pollSCM('H H * * *')
     	])
     ])   
@@ -96,7 +95,7 @@ def call(body) {
 			nexusArtifactUpload(VERSION,ARTIFACT_NAME,'lindacareprod')
 			}
 			task('promote artifact uat to prod'){
-			promoteArtifact(ARTIFACT_NAME,VERSION,'lindacareuat','lindacareprod','testEnvironment')
+			promoteArtifact(ARTIFACT_NAME,VERSION,'lindacareuat','lindacaredev','testEnvironment')
 			}
 			}
 			} catch (err) {
