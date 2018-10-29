@@ -92,7 +92,7 @@ def call(body) {
 			approve('Promote artifact uat to prod?')
 			}
 			task('promote artifact uat to prod'){
-			promoteArtifact(ARTIFACT_NAME,VERSION,'lindacareuat','lindacareprod','testEnvironment')
+			promoteArtifact(ARTIFACT_NAME,VERSION,'lindacareuat','lindacareprod2','testEnvironment')
 			}
 			}
 			} catch (err) {
