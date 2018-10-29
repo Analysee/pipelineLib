@@ -91,11 +91,8 @@ def call(body) {
 			task('promote artifact uat to prod approval'){
 			approve('Promote artifact uat to prod?')
 			}
-			task('upload artifact'){
-			nexusArtifactUpload(VERSION,ARTIFACT_NAME,'lindacareprod')
-			}
 			task('promote artifact uat to prod'){
-			promoteArtifact(ARTIFACT_NAME,VERSION,'lindacareuat','lindacaredev','testEnvironment')
+			promoteArtifact(ARTIFACT_NAME,VERSION,'lindacareuat','lindacareprod','testEnvironment')
 			}
 			}
 			} catch (err) {
